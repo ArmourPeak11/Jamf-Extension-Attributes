@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><extensionAttribute>
+<displayName>Sophos Install Config</displayName>
+<description/>
+<dataType>string</dataType>
+<scriptContentsMac>#!/bin/bash&#13;
+&#13;
+&#13;
+# Write the Sophos installer variables to a file.&#13;
+&#13;
+###############################&#13;
+CUSTOMERTOKEN="65dc20b9-d2a3-45b9-9b2c-c6e069c0c9f7"&#13;
+MGMTSERVER="mcs2-cloudstation-us-east-2.prod.hydra.sophos.com"&#13;
+PRODUCTS="antivirus intercept"&#13;
+###############################&#13;
+&#13;
+# The config file our postinstall script reads from&#13;
+OUTFILE=/Library/Preferences/com.armourpeak.sophos.install.plist&#13;
+&#13;
+defaults write $OUTFILE CustomerToken "$CUSTOMERTOKEN"&#13;
+defaults write $OUTFILE MgmtServer "$MGMTSERVER"&#13;
+defaults write $OUTFILE Products "$PRODUCTS"&#13;
+&#13;
+echo "&lt;result&gt;Values Set&lt;/result&gt;"&#13;
+&#13;
+exit 0</scriptContentsMac>
+</extensionAttribute>
